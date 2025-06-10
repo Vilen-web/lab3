@@ -1,30 +1,10 @@
-name = input("Your name - ")
-money = int(input("How much money do you initially have? "))
+class Shape:
+    def area(self):
+        return 0
 
-while True:
-    print("\nActions:")
-    print("1. Deposit")
-    print("2. Withdraw")
-    print("3. Check Balance")
-    print("4. Exit")
-
-    choice = input("Choose an action (1-4): ")
-
-    if choice == '1':
-        amount = int(input("Enter amount to deposit: "))
-        money += amount
-        print("Deposited: $", amount, "On the account: $", money)
-    elif choice == '2':
-        amount = int(input("Enter amount to withdraw: "))
-        if amount <= money:
-            money -= amount
-            print("Withdrew: $", amount, "On the account: $", money)
-        else:
-            print("Not enough money on the account")
-    elif choice == '3':
-        print("On the account: $", money)
-    elif choice == '4':
-        print("Thank you!")
-        break
-    else:
-        print("Try again.")
+class Square(Shape):
+    def __init__(self, length):
+        self.length = length
+    
+    def area(self):
+        return self.length ** 2
