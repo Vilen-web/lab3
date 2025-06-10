@@ -1,25 +1,11 @@
-import random
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
-def guess_the_number():
-    print("Hello! What is your name?")
-    player_name = input()
-
-    secret_number = random.randint(1, 20)
-    print(f"Well,{player_name}, I am thinking of a number between 1 and 20.")
-
-    c = 0
-    while True:
-        print("Take a guess.")
-        guess = int(input())
-
-        c += 1
-
-        if guess < secret_number:
-            print("Your guess is too low.")
-        elif guess > secret_number:
-            print("Your guess is too high.")
-        else:
-            print(f"Good job, {player_name}! You guessed my number in {c} guesses!")
-            break
-
-guess_the_number()
+numbers = [10, 13, 17, 20, 23, 25, 29]
+prime_numbers = list(filter(lambda x: is_prime(x), numbers))
+print(f"Prime numbers: {prime_numbers}")
