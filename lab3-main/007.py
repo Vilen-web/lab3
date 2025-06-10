@@ -1,10 +1,9 @@
-def has007(nums):
-    for i in range(len(nums) - 1):
-        if nums[i] == 0 and nums[i + 1] == 0 and nums[i + 2] == 7:
-            return True
-    return False
+class StringManipulator:
+    def __init__(self):
+        self.input_string = ""
 
-seven = input()
-numbers = [int(num) for num in seven.split()]
-result = has007(numbers)
-print(result)
+    def getString(self):
+        self.input_string = input("Enter a string: ")
+
+    def printString(self):
+        print(self.input_string.upper())
